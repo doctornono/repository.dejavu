@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.dejavu" name="dejaVu Repository" version="1.0.0" provider-name="doctornono">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="dejaVu Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/doctornono/repository.dejavu/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/doctornono/repository.dejavu/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/doctornono/repository.dejavu/master/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">dejaVu Repository</summary>
+        <description lang="en_GB">Official repository for dejaVu addons. Provides movie and TV show synchronization with dejaVu.plus.</description>
+        <summary lang="fr_FR">Dépôt dejaVu</summary>
+        <description lang="fr_FR">Dépôt officiel pour les extensions dejaVu. Fournit la synchronisation des films et séries avec dejaVu.plus.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
