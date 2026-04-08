@@ -6,10 +6,10 @@ import xml.etree.ElementTree as ET
 
 # Configuration
 ADDONS_SOURCES = [
-    r"C:\Users\conta\AppData\Roaming\Kodi\addons\script.dejavu",
-    r"C:\Users\conta\AppData\Roaming\Kodi\addons\repository.dejavu"
+    r"D:\Developpement\dejavu-kodi-addons\script.dejavu",
+    r"D:\Developpement\dejavu-kodi-addons\repository.dejavu"
 ]
-REPO_DIR = r"C:\Users\conta\AppData\Roaming\Kodi\addons\repository.dejavu"
+REPO_DIR = r"D:\Developpement\dejavu-kodi-addons\repository.dejavu"
 
 
 def create_zip(source_dir, output_zip):
