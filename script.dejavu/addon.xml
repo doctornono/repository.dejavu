@@ -23,25 +23,25 @@
             <!-- ⭐ Noter un film / épisode -->
             <item library="default.py" args="action=rate">
                 <label>30016</label>
-                <visible>ListItem.IsVideo</visible>
+                <visible>!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId)) | !String.IsEmpty(ListItem.Property(tmdb_id))</visible>
             </item>
 
             <!-- 📚 Ajouter à la collection -->
             <item library="default.py" args="action=add_to_collection">
                 <label>30080</label>
-                <visible>ListItem.IsVideo + [!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId))]</visible>
+                <visible>!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId)) | !String.IsEmpty(ListItem.Property(tmdb_id))</visible>
             </item>
 
             <!-- 👁️ Ajouter à la liste à voir -->
             <item library="default.py" args="action=add_to_watchlist">
                 <label>30083</label>
-                <visible>ListItem.IsVideo + [!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId))]</visible>
+                <visible>!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId)) | !String.IsEmpty(ListItem.Property(tmdb_id))</visible>
             </item>
 
             <!-- ❤️ Ajouter aux favoris -->
             <item library="default.py" args="action=add_to_favorites">
                 <label>30086</label>
-                <visible>ListItem.IsVideo + [!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId))]</visible>
+                <visible>!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId)) | !String.IsEmpty(ListItem.Property(tmdb_id))</visible>
             </item>
 
         </menu>
