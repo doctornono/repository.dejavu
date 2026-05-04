@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.dejavu" name="dejaVu" version="1.2.2" provider-name="doctornono">
+<addon id="script.dejavu" name="dejaVu" version="1.2.3" provider-name="doctornono">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.25.1"/>
@@ -29,19 +29,19 @@
             <!-- 📚 Ajouter à la collection -->
             <item library="default.py" args="action=add_to_collection">
                 <label>30080</label>
-                <visible>[ListItem.DBType + string = movie] | [ListItem.DBType + string = tvshow] | [!IsEmpty(ListItem.Property(tmdb_id)) + !IsEmpty(ListItem.Property(media_type))]</visible>
+                <visible>ListItem.IsVideo + [!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId))]</visible>
             </item>
 
             <!-- 👁️ Ajouter à la liste à voir -->
             <item library="default.py" args="action=add_to_watchlist">
                 <label>30083</label>
-                <visible>[ListItem.DBType + string = movie] | [ListItem.DBType + string = tvshow] | [!IsEmpty(ListItem.Property(tmdb_id)) + !IsEmpty(ListItem.Property(media_type))]</visible>
+                <visible>ListItem.IsVideo + [!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId))]</visible>
             </item>
 
             <!-- ❤️ Ajouter aux favoris -->
             <item library="default.py" args="action=add_to_favorites">
                 <label>30086</label>
-                <visible>[ListItem.DBType + string = movie] | [ListItem.DBType + string = tvshow] | [!IsEmpty(ListItem.Property(tmdb_id)) + !IsEmpty(ListItem.Property(media_type))]</visible>
+                <visible>ListItem.IsVideo + [!String.IsEmpty(ListItem.UniqueID(tmdb)) | !String.IsEmpty(ListItem.Property(TmdbId))]</visible>
             </item>
 
         </menu>
