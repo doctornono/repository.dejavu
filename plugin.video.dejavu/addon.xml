@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.dejavu" name="dejaVu Demo" version="1.0.3" provider-name="doctornono">
+<addon id="plugin.video.dejavu" name="dejaVu Demo" version="1.0.4" provider-name="doctornono">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.dejavu" version="1.7.5"/>
@@ -24,10 +24,14 @@
         <disclaimer lang="en_GB">Example addon. Requires script.dejavu. Does not provide streams.</disclaimer>
         <disclaimer lang="fr_FR">Addon d'exemple. Nécessite script.dejavu. Ne fournit pas de flux.</disclaimer>
         <news lang="en_GB">
+v1.0.4 (2026-09-09):
+- Continue watching rows expose Kodi resume points (ResumeTime / TotalTime).
 v1.0.0 (2026-09-09):
 - First developer demo: DejaVuClient RPC listings, get_media_status overlays, configurable players.
         </news>
         <news lang="fr_FR">
+v1.0.4 (2026-09-09) :
+- Reprendre la lecture expose les points de reprise Kodi (ResumeTime / TotalTime).
 v1.0.0 (2026-09-09) :
 - Première démo développeur : listings RPC DejaVuClient, overlays get_media_status, players configurables.
         </news>
