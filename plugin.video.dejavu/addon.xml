@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.dejavu" name="dejaVu Demo" version="1.0.0" provider-name="doctornono">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.dejavu" version="1.7.0"/>
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+
+    <!-- Refresh this plugin's listings when script.dejavu broadcasts a change. -->
+    <extension point="xbmc.service" library="service.py" start="startup"/>
+
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <license>MIT</license>
+        <website>https://dejavu.plus</website>
+        <source>https://github.com/doctornono/plugin.video.dejavu</source>
+        <summary lang="en_GB">Developer demo for script.dejavu (RPC, watched overlays, external players)</summary>
+        <summary lang="fr_FR">Démo développeur pour script.dejavu (RPC, overlays vu, players externes)</summary>
+        <description lang="en_GB">Proof of concept for addon developers. Lists dejaVu dashboard, history, watchlist and more through DejaVuClient only — never talks to dejavu.plus itself. Paints Kodi watched overlays from get_media_status and can hand playback to vStream, AlkoFlix, or any video addon you add in settings. Not a scraper.</description>
+        <description lang="fr_FR">Proof of concept pour les développeurs d'addons. Affiche le dashboard, l'historique, la watchlist dejaVu via DejaVuClient uniquement — jamais d'appel HTTP vers dejavu.plus. Applique les overlays « vu » Kodi depuis get_media_status et peut lancer la lecture dans vStream, AlkoFlix, ou tout addon vidéo ajouté dans les réglages. Ce n'est pas un scraper.</description>
+        <disclaimer lang="en_GB">Example addon. Requires script.dejavu. Does not provide streams.</disclaimer>
+        <disclaimer lang="fr_FR">Addon d'exemple. Nécessite script.dejavu. Ne fournit pas de flux.</disclaimer>
+        <news lang="en_GB">
+v1.0.0 (2026-09-09):
+- First developer demo: DejaVuClient RPC listings, get_media_status overlays, configurable players.
+        </news>
+        <news lang="fr_FR">
+v1.0.0 (2026-09-09) :
+- Première démo développeur : listings RPC DejaVuClient, overlays get_media_status, players configurables.
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>

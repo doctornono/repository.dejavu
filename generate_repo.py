@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 # Configuration
 ADDONS_SOURCES = [
     r"D:\Developpement\dejavu-kodi-addons\script.dejavu",
+    r"D:\Developpement\dejavu-kodi-addons\plugin.video.dejavu",
     r"D:\Developpement\dejavu-kodi-addons\repository.dejavu"
 ]
 REPO_DIR = r"D:\Developpement\dejavu-kodi-addons\repository.dejavu"
