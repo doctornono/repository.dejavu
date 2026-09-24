@@ -15,7 +15,7 @@ Ce n’est pas un scraper : il ne fournit aucun flux.
 ### Addons
 
 - **[script.dejavu](https://github.com/doctornono/script.dejavu)** — addon principal : scrobble, watchlist, favoris, collection, DejaVu Connect, import de la bibliothèque Kodi.
-- **[plugin.video.dejavu](https://github.com/doctornono/plugin.video.dejavu)** — démo développeur (RPC, overlays « vu », lecteurs externes). Ne fournit pas de flux.
+- **[skin.dejavu](https://github.com/doctornono/skin.dejavu)** — habillage pour Kodi avec intégration avancée de script.dejavu
 - **repository.dejavu** — ce dépôt.
 
 ### Installation
@@ -49,7 +49,7 @@ This is not a scraper: it does not provide streams.
 ### Addons
 
 - **[script.dejavu](https://github.com/doctornono/script.dejavu)** — main addon: scrobble, watchlist, favorites, collection, DejaVu Connect, Kodi library import.
-- **[plugin.video.dejavu](https://github.com/doctornono/plugin.video.dejavu)** — developer demo (RPC, watched overlays, external players). Does not provide streams.
+- **[skin.dejavu](https://github.com/doctornono/skin.dejavu)** — skin for kodi with full integration of script.dejavu
 - **repository.dejavu** — this repository.
 
 ### Install
