@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="script.dejavu" name="dejaVu" version="1.30.0" provider-name="doctornono">
+<addon id="script.dejavu" name="dejaVu" version="1.50.2" provider-name="doctornono">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.25.1"/>
@@ -44,6 +44,81 @@
         <disclaimer lang="en_GB">For full synchronization, ensure your dejaVu.plus account is active. Background scrobbling might be affected by power saving settings.</disclaimer>
         <disclaimer lang="fr_FR">Pour une synchronisation complète, assurez-vous que votre compte dejaVu.plus est actif. Le scrobbling en arrière-plan peut être affecté par les réglages d'économie d'énergie.</disclaimer>
         <news lang="en_GB">
+v1.50.0 (2026-09-27):
+- Cache: avoid pruning refreshed scopes when a warm-up API request fails.
+
+v1.49.0 (2026-09-27):
+- Tests: cover cached episode alias lookup and shared status flags.
+
+v1.48.0 (2026-09-27):
+- Cache: preserve season 0 when mapping episode status aliases.
+
+v1.47.0 (2026-09-27):
+- Tests: correct cache pruning coverage so refreshed entries keep their current scope flags.
+
+v1.46.0 (2026-09-27):
+- Tests: correct the cache pruning regression assertion for entries whose final status flags are removed.
+
+v1.45.0 (2026-09-27):
+- Fix: remove stale status flags when a refreshed cache scope no longer contains an item.
+- Tests: cover scope-specific pruning without removing unrelated status flags.
+
+v1.44.0 (2026-09-27):
+- Fix: clear cached scrobble duration when an active scrobble is deleted.
+- Fix: preserve valid zero-valued priority, rating, progress, and duration fields during cache warming.
+- Tests: cover scrobble cleanup and zero-valued cache fields.
+
+v1.43.0 (2026-09-27):
+- Fix: clearing history now also removes the cached watched date.
+- Tests: cover optimistic cache cleanup for history deletion.
+
+v1.42.0 (2026-09-27):
+- Fix: RPC change notifications now preserve TV episode identity (show, season, episode) when no episode TMDB ID is available.
+- Tests: cover episode identity in successful write notifications.
+
+
+v1.41.0 (2026-09-27):
+- Tests: assert the escaped RPC result payload correctly and patch the monitor notification hook at its imported location.
+
+
+v1.40.0 (2026-09-27):
+- Tests: correct RPC regression harnesses for client parameter immutability and write notifications.
+
+
+v1.39.0 (2026-09-27):
+- Fix: RPC calls no longer mutate parameter dictionaries supplied by calling addons.
+- Tests: cover parameter immutability during RPC dispatch.
+
+
+v1.38.0 (2026-09-27):
+- Fix: failed RPC writes no longer update the local status cache or notify other addons.
+- Tests: cover successful and failed RPC write result handling.
+
+
+v1.37.0 (2026-09-27):
+- Fix: preserve TV episode identifiers for RPC history deletion and media resolution.
+- Tests: cover episode parameter forwarding for history deletion and media resolution.
+
+
+v1.36.0 (2026-09-27):
+- Fix: preserve TV episode identifiers when deleting scrobbles or ratings through the Kodi RPC client.
+- Tests: cover RPC parameter forwarding for episode rating and scrobble deletion.
+
+v1.35.0 (2026-09-27):
+- Tests: cover collection reads, channel lookup, device-code authentication, batch-resolve fallback, and authenticated-request guards.
+
+v1.34.0 (2026-09-27):
+- Tests: complete the API client harness with Kodi VFS stubs so cache-backed Plus feature markers can be tested without a Kodi runtime.
+
+v1.33.0 (2026-09-27):
+- Tests: cover the remaining v1 API client routes for scrobbling, ratings, history, watchlist, collection, favorites, channels, dashboard, media status/resolve, and Kodi library import.
+
+v1.32.0 (2026-09-27):
+- Tests: cover the custom-list v1 API contract for listing, creation, item addition/removal, and the complete create-add-remove lifecycle.
+
+v1.31.0 (2026-09-27):
+- Tests: provide a Kodi VideoInfoTag mock so playback lifecycle regression tests exercise metadata extraction.
+
 v1.30.0 (2026-09-27):
 - Fix: repair service.py indentation so the Kodi background service starts correctly.
 v1.29.0 (2026-09-27):
@@ -64,7 +139,7 @@ v1.10.0 (2026-09-11):
 v1.9.6 (2026-09-11):
 - Account settings show Log out (and the signed-in name) after Connect, not Login again.
 v1.7.7 (2026-09-09):
-- Stop keeps continue watching at the last position (pause and stop are the same). Only a finished title or a &lt;30s start leaves the list. Same for episodes.
+- Stop keeps continue watching at the last position (pause and stop are the same). Only a finished title or a  &lt;30s start leaves the list. Same for episodes.
 v1.7.5 (2026-09-09):
 - RPC: accept Other.script.dejavu.* (Kodi NotifyAll prefix) so other addons no longer time out.
 - DejaVuClient: quote NotifyAll JSON payload (commas were splitting the builtin).
@@ -86,6 +161,81 @@ v1.3.0 (2026-08-17):
 - Accept-Language follows Kodi UI. client.py covers all RPC actions.
         </news>
         <news lang="fr_FR">
+v1.50.0 (2026-09-27) :
+- Cache : éviter le nettoyage des périmètres rafraîchis lorsqu’une requête de warm-up échoue.
+
+v1.49.0 (2026-09-27) :
+- Tests : couverture de la recherche d’un épisode par alias et partage des états du cache.
+
+v1.48.0 (2026-09-27) :
+- Cache : conservation de la saison 0 lors du mapping des alias de statut des épisodes.
+
+v1.47.0 (2026-09-27) :
+- Tests : correction de la couverture du nettoyage du cache afin que les entrées rafraîchies conservent leurs états du périmètre courant.
+
+v1.46.0 (2026-09-27) :
+- Tests : correction de l’assertion de régression du nettoyage du cache lorsqu’une entrée n’a plus aucun indicateur d’état.
+
+v1.45.0 (2026-09-27) :
+- Correctif : suppression des indicateurs obsolètes lorsqu'un élément n'est plus présent dans un périmètre de cache rafraîchi.
+- Tests : couverture du nettoyage par périmètre sans supprimer les autres états de l'élément.
+
+v1.44.0 (2026-09-27) :
+- Correctif : la suppression d'un scrobble efface désormais la durée mise en cache.
+- Correctif : conservation des valeurs valides à zéro pour priorité, note, progression et durée lors du réchauffement du cache.
+- Tests : couverture du nettoyage des scrobbles et des valeurs nulles du cache.
+
+v1.43.0 (2026-09-27) :
+- Correctif : la suppression de l'historique efface désormais également la date de visionnage mise en cache.
+- Tests : couverture du nettoyage optimiste du cache lors de la suppression de l'historique.
+
+v1.42.0 (2026-09-27) :
+- Correctif : les notifications de changement RPC conservent désormais l'identité des épisodes TV (série, saison, épisode) lorsqu'aucun ID TMDB d'épisode n'est disponible.
+- Tests : couverture de l'identité des épisodes dans les notifications d'écriture réussies.
+
+
+v1.41.0 (2026-09-27) :
+- Tests : vérification correcte du payload RPC échappé et correction du point de patch du hook de notification du monitor.
+
+
+v1.40.0 (2026-09-27) :
+- Tests : correction des tests de régression RPC pour l'immutabilité des paramètres client et les notifications d’écriture.
+
+
+v1.39.0 (2026-09-27) :
+- Correctif : les appels RPC ne modifient plus les dictionnaires de paramètres fournis par les extensions appelantes.
+- Tests : couverture de l’absence de modification des paramètres lors de l’envoi RPC.
+
+
+v1.38.0 (2026-09-27) :
+- Correctif : les écritures RPC en échec ne mettent plus à jour le cache local ni ne notifient les autres extensions.
+- Tests : couverture du traitement des résultats RPC d’écriture réussis et en échec.
+
+
+v1.37.0 (2026-09-27) :
+- Correctif : conservation des identifiants d’épisode pour la suppression de l’historique et la résolution des médias via RPC.
+- Tests : couverture du transfert des paramètres d’épisode pour la suppression de l’historique et la résolution des médias.
+
+
+v1.36.0 (2026-09-27) :
+- Correctif : conservation des identifiants d’épisode lors de la suppression des scrobbles ou des notes via le client RPC Kodi.
+- Tests : couverture du transfert des paramètres d’épisode pour la suppression des notes et scrobbles RPC.
+
+v1.35.0 (2026-09-27) :
+- Tests : couverture de la lecture de collection, de la recherche de chaîne, de l’authentification par code appareil, du fallback de résolution par lot et du blocage des requêtes sans session.
+
+v1.34.0 (2026-09-27) :
+- Tests : finalisation du harnais du client API avec des stubs VFS Kodi afin de tester les marqueurs de fonctionnalités Plus utilisant le cache sans runtime Kodi.
+
+v1.33.0 (2026-09-27) :
+- Tests : couverture des principales routes API v1 restantes du client pour scrobbling, notes, historique, liste de suivi, collection, favoris, chaînes, tableau de bord, statut/résolution des médias et import de bibliothèque Kodi.
+
+v1.32.0 (2026-09-27) :
+- Tests : couverture du contrat API v1 des listes personnelles pour lecture, création, ajout/suppression d’élément et cycle complet création-ajout-suppression.
+
+v1.31.0 (2026-09-27) :
+- Tests : ajout d'un faux VideoInfoTag Kodi afin que les tests de régression du cycle de lecture exercent aussi l'extraction des métadonnées.
+
 v1.30.0 (2026-09-27) :
 - Correctif : réparation de l'indentation de service.py pour permettre le démarrage correct du service Kodi.
 v1.29.0 (2026-09-27) :
@@ -106,7 +256,7 @@ v1.10.0 (2026-09-11) :
 v1.9.6 (2026-09-11) :
 - Une fois connecté, les paramètres Compte affichent Se déconnecter (et le nom), plus Connecter dejaVu.
 v1.7.7 (2026-09-09) :
-- Stop conserve Reprendre la lecture à la dernière position (pause et stop identiques). Seule une fin de titre ou un départ &lt; 30 s retire l’item. Idem pour les épisodes.
+- Stop conserve Reprendre la lecture à la dernière position (pause et stop identiques). Seule une fin de titre ou un départ  &lt; 30 s retire l’item. Idem pour les épisodes.
 v1.7.5 (2026-09-09) :
 - RPC : accepte Other.script.dejavu.* (préfixe NotifyAll Kodi) — plus de timeout côté autres addons.
 - DejaVuClient : payload JSON de NotifyAll quoté (les virgules cassaient le builtin).
